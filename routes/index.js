@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   request(url, function (error, response, body) {
     var escapedBody = body.replace(/\n/g,'\\n');
     res.type('application/javascript'); 
-    res.render('index', { json: escapedBody, unique: cryptoRandomString(10) });
+    res.render('index', { json: escapedBody, unique: cryptoRandomString(10), url: url });
   });
 
 });
